@@ -45,7 +45,11 @@ var displayedWord = [];
 		}
 	}
 	var startEmpty = displayEmpty();
-	document.getElementById("len").innerHTML =  'LENGTH OF THE WORD : ' + compG.length;
+	function showLength(compG) {
+		document.getElementById("len").innerHTML =  'LENGTH OF THE WORD : ' + compG.length;
+	}
+	
+	showLength(compG);
 
 // capture user key events
 document.onkeyup = function(event) 
@@ -91,6 +95,7 @@ if (totalGuess>0) {
 			win++;
 
 			compG = comptGuess();
+			showLength(compG);
 			totalGuess = 15;
 			letterGuessed = [];
 			displayedWord = [];
@@ -116,6 +121,7 @@ if (totalGuess>0) {
 else
 {
 	compG = comptGuess();
+	showLength(compG);
 	win = 0;
 	totalGuess = 15;
 	letterGuessed = [];
